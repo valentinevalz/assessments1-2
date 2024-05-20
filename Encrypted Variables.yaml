@@ -1,0 +1,5 @@
+- hosts: (`Server is listening at http://localhost:${port'} )
+  tasks:
+    - name: Print secret
+      debug:
+        msg: "{{ Hello, world! this is altschool assesment }}"
