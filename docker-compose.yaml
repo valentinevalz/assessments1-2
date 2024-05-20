@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  sampleserver:
+    container_name: assessment2 
+    build: .
+    ports:
+      - "3000:3000"  # host_port: container_port
+    command: "node", "app.js"
+    environment:
+      - NODE_ENV=production
+    volumes:
+       - ./store:/serverdir/src
+       
+
+  mongodb:
+    container_name: assessment2db
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
